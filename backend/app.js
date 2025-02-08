@@ -12,7 +12,8 @@ const createRoutes=require("./src/routes/createOrder.routes");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
+app.use(cors({ origin: "*", exposedHeaders: ["Content-Disposition"] }));
 
 app.use("/api/v1/customer", customerRoutes);
 app.use("/api/v1/product", productRoutes);
