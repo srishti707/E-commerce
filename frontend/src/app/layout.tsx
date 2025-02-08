@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/UI/Navbar";
-import Sidebar from "@/components/UI/Sidebar";
 import { Toaster } from "react-hot-toast";
 
 const geistSans = localFont({
@@ -34,6 +32,7 @@ export default function RootLayout({
         {/* <Sidebar/> */}
         {children}
         <Toaster />
+        <script src="https://checkout.razorpay.com/v1/checkout.js"/>
       </body>
     </html>
   );
