@@ -27,21 +27,21 @@ const [profile,setProfile]=useState<string|null>(null);
     <div className= {` px-3 flex justify-between w-full  py-6 ${path==="/"?"bg-black/10 text-white":""}`}>
  
    <ul className=' flex py-2  gap-5 z-10'>
-      <li onClick={()=>router.push("/products")}
-       className=' hover:text-slate-50 hover:text-lg'>Everything</li>
-      <li className=' hover:text-slate-50 hover:text-lg'>Women</li>
-      <li className=' hover:text-slate-50 hover:text-lg'>Men</li>
-      <li className=' hover:text-slate-50 hover:text-lg'>Accessories</li>
-     </ul>
+      <button onClick={()=>router.push("/products")}
+       className=' hover:text-slate-50 hover:text-lg'>Everything</button>
+      <button className=' hover:text-slate-50 hover:text-lg'>Women</button>
+    <button className=' hover:text-slate-50 hover:text-lg'>Men</button>
+    <button className=' hover:text-slate-50 hover:text-lg'>Accessories</button>
+     </ul >
   
    
     <div className='  gap-7 py-2 flex px-3 z-10'>
      <ul className=' flex gap-4'>
       
-      <li className='hover:text-slate-50 hover:text-lg p-2'>Cart <button onClick={handleCart}><FaShoppingCart /></button></li>
+      <button className='flex  hover:text-lg p-2' onClick={handleCart}><FaShoppingCart /></button>
   
-      <li className='hover:text-slate-50 hover:text-lg p-2'><i>CONTACT US</i></li>
-      <li className='hover:text-slate-50 hover:text-lg p-2'><i>ABOUT</i></li>
+      <button className=' p-2'><i>CONTACT US</i></button>
+      <button className=' p-2'><i>ABOUT</i></button>
      </ul>
       {
         (name || profile) ? <div className='flex gap-3 '>
