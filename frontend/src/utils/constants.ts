@@ -1,4 +1,6 @@
-export const server_URI="http://localhost:6969";
+// export const server_URI="http://localhost:6969";
+
+ export const server_URI="https://e-commerce-v2ut.onrender.com";
 //authentication api endpoints
 
 export const signup_API = server_URI+"/api/v1/customer/signup";

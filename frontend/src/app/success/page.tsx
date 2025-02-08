@@ -1,8 +1,8 @@
 "use client"
 import { useSearchParams } from 'next/navigation'
-import React from 'react'
+import React, { Suspense } from 'react'
 import { useRouter } from 'next/navigation'
-function page() {
+function Page() {
     const router=useRouter();
     const params=useSearchParams()
     const payment_id=params.get("payment_id")
@@ -15,4 +15,10 @@ function page() {
   )
 }
 
-export default page
+const SuspendedPage = () => (
+  <Suspense>
+    <Page />
+  </Suspense>
+);
+
+export default SuspendedPage;

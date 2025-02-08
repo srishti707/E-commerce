@@ -2,9 +2,9 @@
 import Navbar from "@/components/UI/Navbar";
 import { getAllData, getOneProduct } from "@/networks/productNetwork";
 import { useSearchParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 
-function page() {
+function Page() {
   const [getProduct, setGetProduct] = useState<any>(null);
   const [getAlldata, setGetAllData] = useState<any>(null);
   const [getRelatedData, setRelatedData] = useState<any>(null);
@@ -177,5 +177,10 @@ function page() {
     </div>
   );
 }
+const SuspendedPage = () => (
+  <Suspense>
+    <Page />
+  </Suspense>
+);
 
-export default page;
+export default SuspendedPage;

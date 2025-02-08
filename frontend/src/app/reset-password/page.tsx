@@ -3,11 +3,11 @@
 import { login, resetPassword } from '@/networks/authNetwork';
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation';
-import React from 'react'
+import React, { Suspense } from 'react'
 import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast';
 
-function page() {
+function Page() {
   const {register,handleSubmit}=useForm();
 
   const params=useSearchParams();
@@ -48,4 +48,10 @@ function page() {
   )
 }
 
-export default page
+const SuspendedPage = () => (
+  <Suspense>
+    <Page />
+  </Suspense>
+);
+
+export default SuspendedPage
